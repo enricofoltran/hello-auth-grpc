@@ -1,0 +1,33 @@
+{
+    "signing": {
+        "default": {
+            "expiry": "168h"
+        },
+        "profiles": {
+            "server": {
+                "expiry": "8760h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "server auth"
+                ]
+            },
+            "client": {
+                "expiry": "8760h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "client auth"
+                ]
+            },
+            "signing": {
+                "expiry": "8760h",
+                "usages": [
+                    "signing",
+                    "key encipherment"
+                ]
+            }
+        }
+    }
+}
+

@@ -1,0 +1,17 @@
+{
+    "CN": "gRPC CA",
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C": "US",
+            "L": "CA",
+            "ST": "San Francisco",
+            "O": "My Own Company",
+            "OU": "gRPC"
+        }
+    ]
+}
+

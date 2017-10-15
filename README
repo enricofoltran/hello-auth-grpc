@@ -1,0 +1,27 @@
+// create the config path $HOME/.hello
+make init
+
+// generate keys and certs for mutual TLS and JWT signing
+// require cfssl and cfssljson installed
+// https://cfssl.org/
+make gencert
+
+// build the binaries
+// require dep, protoc and protoc-gen-go installed
+// https://github.com/golang/dep
+// https://github.com/google/protobuf
+// https://developers.google.com/protocol-buffers/docs/reference/go-generated
+make build
+
+// start the hello service
+./bin/hello-server
+
+// start the auth service
+./bin/auth-server --username=admin --password=p455w0rd
+
+// get a valid JWT token by login with the auth client
+./bin/auth-client --username=admin --password=p455w0rd
+
+// call the hello service with the hello client,
+// will use the JWT token to authenticate your request
+./bin/hello-client
