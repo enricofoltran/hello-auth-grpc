@@ -2,12 +2,21 @@ syntax = "proto3";
 
 package hello;
 
+// Greeter service provides a simple greeting functionality.
+// All RPC methods require JWT authentication via the "authorization"
+// metadata header. The JWT token must be obtained from the Auth service.
 service Greeter {
+    // SayHello returns a personalized greeting message.
+    // Requires valid JWT token in request metadata.
     rpc SayHello (Request) returns (Response);
 }
 
+// Request for SayHello RPC.
+// Currently empty as the username is extracted from the JWT token.
 message Request {}
 
+// Response contains the greeting message.
 message Response {
+    // message is a personalized greeting for the authenticated user
     string message = 1;
 }

@@ -1,2 +1,42 @@
-bin
-vendor
+# Binaries
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.html
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# Environment files (contain secrets)
+.env
+.env.local
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Certificates and keys (sensitive)
+*.pem
+*.csr
+*.key
+.token
+
+# Deprecated dependency files
+Gopkg.toml
+Gopkg.lock
