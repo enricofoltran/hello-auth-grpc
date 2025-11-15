@@ -58,8 +58,7 @@ Provides greeting functionality secured by JWT authentication.
 # See: https://golang.org/doc/install
 
 # Install cfssl
-go install github.com/cloudflare/cfssl/cmd/cfssl@latest
-go install github.com/cloudflare/cfssl/cmd/cfssljson@latest
+go install github.com/cloudflare/cfssl/cmd/...@latest
 
 # Install protoc (optional)
 # See: https://grpc.io/docs/protoc-installation/

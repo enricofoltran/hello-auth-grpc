@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package auth;
 
+option go_package = "github.com/enricofoltran/hello-auth-grpc/auth";
+
 // Auth service provides user authentication and JWT token issuance.
 // This service validates user credentials and returns signed JWT tokens
 // that can be used to authenticate requests to other services.

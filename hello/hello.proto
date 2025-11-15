@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package hello;
 
+option go_package = "github.com/enricofoltran/hello-auth-grpc/hello";
+
 // Greeter service provides a simple greeting functionality.
 // All RPC methods require JWT authentication via the "authorization"
 // metadata header. The JWT token must be obtained from the Auth service.

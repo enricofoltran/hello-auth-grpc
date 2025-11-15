@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/golang-jwt/jwt/v5"
 	pb "github.com/enricofoltran/hello-auth-grpc/hello"
+	"github.com/golang-jwt/jwt/v5"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
@@ -22,6 +22,7 @@ const (
 
 // server implements the Greeter service with JWT authentication.
 type server struct {
+	pb.UnimplementedGreeterServer
 	jwtKey *rsa.PublicKey
 }
 
