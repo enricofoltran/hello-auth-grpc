@@ -2,15 +2,29 @@ syntax = "proto3";
 
 package auth;
 
+// Auth service provides user authentication and JWT token issuance.
+// This service validates user credentials and returns signed JWT tokens
+// that can be used to authenticate requests to other services.
 service Auth {
+    // Login authenticates a user with username and password.
+    // On successful authentication, returns a JWT token valid for 1 hour.
+    // Rate limited to prevent brute force attacks.
     rpc Login (Request) returns (Response);
 }
 
+// Request contains user credentials for authentication.
 message Request {
+    // username is the user's login name (8-64 characters)
     string username = 1;
+
+    // password is the user's password (8-128 characters)
     string password = 2;
 }
 
+// Response contains the authentication result.
 message Response {
+    // token is a signed JWT token valid for 1 hour.
+    // The token should be included in the "authorization" metadata
+    // header for authenticated requests to other services.
     string token = 1;
 }
