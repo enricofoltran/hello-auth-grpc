@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/golang-jwt/jwt/v5"
 	pb "github.com/enricofoltran/hello-auth-grpc/auth"
+	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/time/rate"
 	"google.golang.org/grpc/codes"
@@ -35,6 +35,7 @@ const (
 
 // server implements the Auth service with security enhancements.
 type server struct {
+	pb.UnimplementedAuthServer
 	jwtKey         *rsa.PrivateKey
 	passwordHash   []byte // bcrypt hash of the password
 	username       string
